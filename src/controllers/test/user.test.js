@@ -118,7 +118,7 @@ describe("Test_userController", () => {
 
       expect(res.status).toHaveBeenCalledWith(404);
       expect(res.json).toHaveBeenCalledWith({
-        message: "User not foundd",
+        message: "User not found",
       });
       expect(mockGetUserById).toHaveBeenCalledWith(req.params.id);
     });
@@ -126,7 +126,7 @@ describe("Test_userController", () => {
     test("should return 500 if service throws an error", async () => {
       const mockGetUserById = jest
         .spyOn(User.prototype, "getUserById")
-        .mockRejectedValue(new Error("Internal server errorr"));
+        .mockRejectedValue(new Error("Internal server error"));
 
       await userController.getUserById(req, res);
 
