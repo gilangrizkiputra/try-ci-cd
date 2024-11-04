@@ -10,4 +10,6 @@ router.get("/:id", (req, res) => {user.getUserById(req, res);});
 
 router.put("/:id", (req, res) => {user.updateUser(req, res);});
 
+router.delete("/:id", (req, res) => {user.deleteUser(req, res);});
+
 export default router;

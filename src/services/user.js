@@ -89,4 +89,16 @@ export class User {
       throw new Error("User not found or update failed");
     }
   }
+
+  async deleteUser(id) {
+    try {
+      return await prisma.user.delete({
+        where: {
+          id: Number(id),
+        },
+      });
+    } catch (error) {
+      throw new Error("User not found or delete failed");
+    }
+  }
 }
